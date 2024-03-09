@@ -23,12 +23,12 @@ local catppuccin = {
     blue    = '#89B4FA',
     red     = '#EBA0AC',
     green   = '#A6E3A1',
-    purple  = '#B4BEFE',
+    purple  = '#CBA6F7',
     black   = '#181825',
     yellow  = '#F9E2AF',
     teal    = '#74C7EC',
     white   = '#C9D2EF', 
-    dark    = '#F2CDCD'
+    dark    = '#B4BEFE'
 }
 
 local function mode_alias(m)
@@ -49,8 +49,8 @@ end
 local function mode_color(m)
   local mode_colors = {
     --normal =  colors.green,
-    normal  = catppuccin.green,
-    insert  = catppuccin.blue,
+    normal  = catppuccin.blue,
+    insert  = catppuccin.green,
     visual  = catppuccin.purple,
     replace = catppuccin.red,
     --insert =  colors.blue,
@@ -69,7 +69,8 @@ local function mode_color(m)
     v = mode_colors.visual,
   }
 
-  return color[m] or colors.bg_light
+  --return color[m] or colors.bg_light
+  return color[m] or catppuccin.gray
 end
 
 -- disable for these file types
@@ -80,7 +81,7 @@ gl.section.left[1] = {
     separator = '  ',
     separator_highlight = {catppuccin.black, catppuccin.gray},
     highlight = {catppuccin.white, catppuccin.black},
-    provider = function() return "  󰸳 " end,
+    provider = function() return "   " end,
   }
 }
 
@@ -102,7 +103,7 @@ gl.section.left[3] = {
   FileIcon = {
     provider = 'FileIcon',
     condition = condition.buffer_not_empty,
-    highlight = {catppuccin.dark, catppuccin.black},
+    highlight = {catppuccin.white, catppuccin.black},
   }
 }
 
@@ -110,7 +111,7 @@ gl.section.left[4] = {
   FileName = {
     provider = 'FileName',
     condition = condition.buffer_not_empty,
-    highlight = {catppuccin.dark, catppuccin.black},
+    highlight = {catppuccin.white, catppuccin.black},
     separator_highlight = {catppuccin.black, colors.bg},
     separator = '  ',
   }
@@ -158,7 +159,7 @@ gl.section.left[8] = {
 gl.section.left[9] = {
   CocFunction = {
     icon = 'λ ',
-    highlight = {colors.gray, colors.bg},
+    highlight = {catppuccin.gray, colors.bg},
     provider = function()
       local has_func, func_name = pcall(vim.api.nvim_buf_get_var, 0, 'coc_current_function')
       if not has_func then return '' end
@@ -192,7 +193,7 @@ gl.section.right[3] = {
     icon = ' ',
     separator = ' ',
     separator_highlight = {catppuccin.gray, colors.bg},
-    highlight = {catppuccin.blue, catppuccin.gray},
+    highlight = {catppuccin.dark, catppuccin.gray},
     provider = function()
       local current_line = vim.fn.line('.')
       local total_lines = vim.fn.line('$')
@@ -209,14 +210,13 @@ gl.section.right[3] = {
   }
 }
 
-vim.api.nvim_command('hi GalaxyViModeReverse guibg=' .. colors.bg_dim)
+vim.api.nvim_command('hi GalaxyViModeReverse guibg=' .. catppuccin.gray)
 
 gl.section.right[4] = {
   ViMode = {
-    icon = ' ',
+    icon =  '󰸳',
     separator = ' ',
     separator_highlight = 'GalaxyViModeReverse',
-    --highlight = {colors.bg, mode_color()},
     highlight = {catppuccin.gray, mode_color()},
     provider = function()
       local m = vim.fn.mode() or vim.fn.visualmode()

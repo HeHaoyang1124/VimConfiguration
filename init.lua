@@ -10,4 +10,4 @@ require("conf.plugins.aerial")
 require("conf.plugins.telescope")
 require("conf.plugins.bufferline")
 --require("conf.plugins.airline")
-
+--TODO:
