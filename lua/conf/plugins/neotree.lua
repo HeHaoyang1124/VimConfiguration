@@ -27,7 +27,7 @@ vim.api.nvim_set_keymap("n", "<F3>",
         winbar = true,
         content_layout = "center",
         sources = {
-          { source = "filesystem", display_name = "" .. "File" },
+          { source = "filesystem", display_name = "" .. "File" },
           { source = "buffers",    display_name = "" .. "Bufs" },
           { source = "git_status", display_name = "" .. "Git" },
           { source = "diagnostics",display_name = "" .. "Diagnostic" },
@@ -88,7 +88,7 @@ vim.api.nvim_set_keymap("n", "<F3>",
               modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
               deleted   = "✖",-- this can only be used in the git_status source
               renamed   = "󰁕",-- this can only be used in the git_status source
-              -- Status type
+              --Status type
               untracked = "",
               ignored   = "",
               unstaged  = "󰄱",

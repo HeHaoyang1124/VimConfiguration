@@ -52,17 +52,6 @@ return require('packer').startup(function(use)
         "MunifTanjim/nui.nvim",
     }}
 
-    --NvimTree
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
-        config = function()
-            require("nvim-tree").setup {}
-        end
-    }
-
     --bufferline
     use {
         'akinsho/bufferline.nvim', 
