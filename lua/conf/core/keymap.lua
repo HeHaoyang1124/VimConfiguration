@@ -16,9 +16,6 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
---NvimTree
-vim.api.nvim_set_keymap("n", "<F2>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-
 --ClangFormat
 vim.api.nvim_set_keymap("n", "<A-I>", ":ClangFormat<CR>", { noremap = true, silent = true })
 

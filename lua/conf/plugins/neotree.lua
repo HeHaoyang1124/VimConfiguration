@@ -28,9 +28,9 @@ vim.api.nvim_set_keymap("n", "<F3>",
         content_layout = "center",
         sources = {
           { source = "filesystem", display_name = "" .. "File" },
-          { source = "buffers",    display_name = "" .. "Bufs" },
-          { source = "git_status", display_name = "" .. "Git" },
-          { source = "diagnostics",display_name = "" .. "Diagnostic" },
+          { source = "buffers",    display_name = "" .. "Bufs" },
+          { source = "git_status", display_name = "" .. "Git" },
+          { source = "diagnostics",display_name = "" .. "Diagnostic" },
         },
       },
 
@@ -73,7 +73,7 @@ vim.api.nvim_set_keymap("n", "<F3>",
             highlight = "NeoTreeFileIcon"
           },
           modified = {
-            symbol = "[+]",
+            symbol = "",
             highlight = "NeoTreeModified",
           },
           name = {
@@ -84,15 +84,15 @@ vim.api.nvim_set_keymap("n", "<F3>",
           git_status = {
             symbols = {
               -- Change type
-              added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-              modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-              deleted   = "✖",-- this can only be used in the git_status source
-              renamed   = "󰁕",-- this can only be used in the git_status source
+              added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+              modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+              deleted   = "󰗨",-- this can only be used in the git_status source
+              renamed   = "",-- this can only be used in the git_status source
               --Status type
               untracked = "",
-              ignored   = "",
-              unstaged  = "󰄱",
-              staged    = "",
+              ignored   = "",
+              unstaged  = "",
+              staged    = "",
               conflict  = "",
             }
           },

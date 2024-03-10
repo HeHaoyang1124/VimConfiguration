@@ -1,3 +1,16 @@
+local catppuccin = {
+    gray    = '#2A2B3C',
+    blue    = '#89B4FA',
+    red     = '#EBA0AC',
+    green   = '#A6E3A1',
+    purple  = '#CBA6F7',
+    black   = '#181825',
+    yellow  = '#F9E2AF',
+    teal    = '#74C7EC',
+    white   = '#C9D2EF', 
+    dark    = '#B4BEFE'
+}
+
 require("todo-comments").setup({
   signs = true, -- show icons in the signs column
   sign_priority = 8, -- sign priority
@@ -9,16 +22,27 @@ require("todo-comments").setup({
       alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
       -- signs = false, -- configure signs for some keywords individually
     },
-    TODO = { icon = " ", color = "info" },
-    HACK = { icon = " ", color = "warning" },
-    WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+    --TODO = { icon = " ", color = "info" },
+    --HACK = { icon = " ", color = "warning" },
+    --WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+    --PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+    --NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+    --TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+    
+    TODO = { icon = " ", color = catppuccin.green },
+    HACK = { icon = " ", color = catppuccin.blue },
+    WARN = { icon = " ", color = catppuccin.yellow, alt = { "WARNING", "XXX" } },
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-    TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+    NOTE = { icon = " ", color = catppuccin.red , alt = { "INFO" } },
+    TEST = { icon = "⏲ ", color = catppuccin.purple, alt = { "TESTING", "PASSED", "FAILED" } },
+ 
   },
+
   gui_style = {
-    fg = "NONE", -- The gui style to use for the fg highlight group.
-    bg = "BOLD", -- The gui style to use for the bg highlight group.
+    fg = "BOLD", 
+    bg = "BOLD", 
+    --fg = "NONE", -- The gui style to use for the fg highlight group.
+    --bg = "BOLD", -- The gui style to use for the bg highlight group.
   },
   merge_keywords = true, -- when true, custom keywords will be merged with the defaults
   -- highlighting of the line containing the todo comment
