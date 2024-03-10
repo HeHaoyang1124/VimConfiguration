@@ -4,11 +4,19 @@ require("bufferline").setup {
         -- 使用 nvim 内置lsp
         diagnostics = "nvim_lsp",
         -- 左侧让出 nvim-tree 的位置
-        offsets = {{
-            filetype = "NvimTree",
+        offsets = {
+        {
+            filetype = "neo-tree",
             text = "File Explorer",
             highlight = "Directory",
+            text_align = "center"
+        },
+        {
+            filetype = "NvimTree",
+            text = " File",
+            highlight = "Directory",
             text_align = "left"
-        }}
+        }
+    }
     }
 }

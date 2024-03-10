@@ -102,7 +102,7 @@ vim.cmd.colorscheme "catppuccin"
 --vim.cmd.colorscheme "gruvbox"
  --vim.cmd.colorscheme "onedark"
 
-local VimExtConfig = [[ highlight Normal guibg=NONE ctermbg=None ]]
-vim.cmd(VimExtConfig)
+--local VimExtConfig = [[ highlight Normal guibg=NONE ctermbg=None ]]
+--vim.cmd(VimExtConfig)
 
 
