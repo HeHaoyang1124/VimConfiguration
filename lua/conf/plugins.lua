@@ -11,17 +11,17 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
-augroup end
-]])
-
 return require('packer').startup(function(use)
     --packer
     use 'wbthomason/packer.nvim'
 
+    --Launch
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        requires = {'nvim-tree/nvim-web-devicons'}
+    }
+    
     --Gruvbox
     use { "ellisonleao/gruvbox.nvim" }
     --catppuccin
@@ -59,29 +59,24 @@ return require('packer').startup(function(use)
     use({
       'glepnir/galaxyline.nvim',
       branch = 'main',
-      -- some optional icons
       requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     })
 
-    --autopairs
+    --pairs
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    --installer
-    use { "nvim-treesitter/nvim-treesitter" }
 
     --commenter
     use 'scrooloose/nerdcommenter'
 
-    --ClangFormat
-    use "rhysd/vim-clang-format"
-
     --lsp
+    use { "nvim-treesitter/nvim-treesitter" }
     use {'neoclide/coc.nvim', branch= 'release'}
     
-    -- smooth scroll
-    use "psliwka/vim-smoothie"
+    -- smooth scroll / cursor
+    use "echasnovski/mini.animate"
 
     --terminal
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -91,12 +86,8 @@ return require('packer').startup(function(use)
 
     --function list
     use {"stevearc/aerial.nvim"}
-    -- My plugins here
-    -- use 'foo1/bar1.nvim'
-    -- use 'foo2/bar2.nvim'
 
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
+
     if packer_bootstrap then
         require('packer').sync()
     end

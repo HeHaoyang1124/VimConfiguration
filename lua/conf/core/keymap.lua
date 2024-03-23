@@ -14,6 +14,9 @@ vim.keymap.set({"n", "v"}, "<C-k>", "5k");
 vim.keymap.set({"n", "v"}, "<C-l>", "5l");
 vim.keymap.set({"n", "v"}, "<C-h>", "5h");
 
+vim.keymap.set({"n", "v"}, "<leader>h", "^");
+vim.keymap.set({"n", "v"}, "<leader>l", "$");
+
 --Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -34,10 +37,10 @@ vim.keymap.set({"i", "n", "v"}, "<F7>",
     {silent = true, noremap = true, buffer = bufnr})
 
 -- smooth scroll
-vim.cmd[[
-nnoremap <unique> <C-D> <cmd>call smoothie#do("\<C-D>") <CR>
-vnoremap <unique> <C-D> <cmd>call smoothie#do("\<C-D>") <CR>
-]]
+--vim.cmd[[
+--nnoremap <unique> <C-D> <cmd>call smoothie#do("\<C-D>") <CR>
+--vnoremap <unique> <C-D> <cmd>call smoothie#do("\<C-D>") <CR>
+--]]
 
 -- terminal
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
