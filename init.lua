@@ -6,13 +6,12 @@ require("conf.plugins.todoComments")
 require("conf.plugins.Treesitter")
 require("conf.plugins.coc")
 require("conf.plugins.galaxyline")
-require("conf.plugins.aerial")
 require("conf.plugins.telescope")
 require("conf.plugins.bufferline")
+require("conf.plugins.aerial")
 require("conf.plugins.neotree")
---require("conf.plugins.airline")
+
 -- TODO: 
 
 -- INFO:
-
 

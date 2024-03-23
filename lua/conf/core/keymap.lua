@@ -4,10 +4,15 @@ vim.g.maplocalleader = " "
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<A-j>", "dd$p")
 vim.keymap.set("n", "<A-k>", "kdd$pk")
+
 vim.keymap.set("n", "<S-Up>",    ":resize -1<CR>")
-vim.keymap.set("n", "<S-Down>",  ":resize +1<CR>")
-vim.keymap.set("n", "<S-Left>",  ":vertical -1<CR>")
-vim.keymap.set("n", "<S-Right>", ":vertical +1<CR>")
+vim.keymap.set("n", "<S-Down>",  ":resize +1<CR>") vim.keymap.set("n", "<S-Left>",  "<C-w><")
+vim.keymap.set("n", "<S-Right>", "<C-w>>")
+
+vim.keymap.set({"n", "v"}, "<C-j>", "5j");
+vim.keymap.set({"n", "v"}, "<C-k>", "5k");
+vim.keymap.set({"n", "v"}, "<C-l>", "5l");
+vim.keymap.set({"n", "v"}, "<C-h>", "5h");
 
 --Telescope
 local builtin = require('telescope.builtin')

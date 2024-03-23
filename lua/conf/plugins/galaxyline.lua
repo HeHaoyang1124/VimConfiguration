@@ -81,7 +81,15 @@ gl.section.left[1] = {
     separator = '  ',
     separator_highlight = {catppuccin.black, catppuccin.gray},
     highlight = {catppuccin.white, catppuccin.black},
-    provider = function() return "   " end,
+    
+    provider = function() 
+      local m = vim.fn.mode() or vim.fn.visualmode()
+      local mode = mode_alias(m)
+      local color = mode_color(m)
+      vim.api.nvim_command('hi GalaxyViModeIcon guifg=' .. color)
+      return "    " 
+    end,
+    
   }
 }
 
@@ -217,7 +225,8 @@ gl.section.right[4] = {
     icon =  '󰸳',
     separator = ' ',
     separator_highlight = 'GalaxyViModeReverse',
-    highlight = {catppuccin.gray, mode_color()},
+    --highlight = {catppuccin.gray, mode_color()},
+    highlight = {catppuccin.gray, catppuccin.gray},
     provider = function()
       local m = vim.fn.mode() or vim.fn.visualmode()
       local mode = mode_alias(m)

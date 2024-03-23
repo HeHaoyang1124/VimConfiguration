@@ -22,10 +22,6 @@ return require('packer').startup(function(use)
     --packer
     use 'wbthomason/packer.nvim'
 
-    --Theme
-    -- use 'folke/tokyonight.nvim'
-    -- use 'navarasu/onedark.nvim'
-
     --Gruvbox
     use { "ellisonleao/gruvbox.nvim" }
     --catppuccin
@@ -59,6 +55,7 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons'
     }
 
+    --galaxyline
     use({
       'glepnir/galaxyline.nvim',
       branch = 'main',
@@ -81,18 +78,8 @@ return require('packer').startup(function(use)
     use "rhysd/vim-clang-format"
 
     --lsp
-    use "neoclide/coc.nvim"
-
-    --airline
-    --use "vim-airline/vim-airline"
-    --use 'vim-airline/vim-airline-themes'
-
-    --Aerial
-    use {
-        'stevearc/aerial.nvim',
-        config = function() require('aerial').setup() end
-    }
-
+    use {'neoclide/coc.nvim', branch= 'release'}
+    
     -- smooth scroll
     use "psliwka/vim-smoothie"
 
@@ -102,6 +89,8 @@ return require('packer').startup(function(use)
         end
     }
 
+    --function list
+    use {"stevearc/aerial.nvim"}
     -- My plugins here
     -- use 'foo1/bar1.nvim'
     -- use 'foo2/bar2.nvim'

@@ -2,6 +2,10 @@
 vim.api.nvim_set_keymap("n", "<F3>", 
 ":Neotree toggle<CR>:hi NeotreeCursorLine guibg=None<CR>:hi NeotreeTabInactive guibg=None<CR>:hi NeotreeTabSeparatorInactive guibg=None<CR>:hi NeotreeTabSeparatorActive guibg=None<CR>", {noremap = true, silent = true})
 
+vim.api.nvim_set_keymap("n", "<leader>d", 
+":Neotree toggle<CR>:hi NeotreeCursorLine guibg=None<CR>:hi NeotreeTabInactive guibg=None<CR>:hi NeotreeTabSeparatorInactive guibg=None<CR>:hi NeotreeTabSeparatorActive guibg=None<CR>", {noremap = true, silent = true})
+
+
 
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
       vim.fn.sign_define("DiagnosticSignError",
