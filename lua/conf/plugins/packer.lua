@@ -15,18 +15,16 @@ return require('packer').startup(function(use)
     --packer
     use 'wbthomason/packer.nvim'
 
+    --- appearance ---
     --Launch
     use {
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',
         requires = {'nvim-tree/nvim-web-devicons'}
     }
-    
-    --Gruvbox
-    use { "ellisonleao/gruvbox.nvim" }
-    --catppuccin
+    --Theme catppuccin
     use { "catppuccin/nvim", as = "catppuccin" }
-    use 'navarasu/onedark.nvim'
+
 
     --telescope
     use {
@@ -34,11 +32,13 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
     use {
         "folke/todo-comments.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     }
+    
+    -- smooth scroll / cursor
+    use "echasnovski/mini.animate"
 
     --Neotree
     use {
@@ -75,20 +75,16 @@ return require('packer').startup(function(use)
     use { "nvim-treesitter/nvim-treesitter" }
     use {'neoclide/coc.nvim', branch= 'release'}
     
-    -- smooth scroll / cursor
-    use "echasnovski/mini.animate"
-
     --terminal
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-        end
-    }
+    use {"akinsho/toggleterm.nvim", tag = '*' }
 
     --function list
     use {"stevearc/aerial.nvim"}
 
+    --Debuger
+    use 'mfussenegger/nvim-dap'
 
     if packer_bootstrap then
-        require('packer').sync()
+        require('lua.conf.plugins.packer').sync()
     end
 end)

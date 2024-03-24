@@ -1,12 +1,3 @@
---vim.o.background = "dark" -- or "light" for light mode
--- vim.cmd([[colorscheme gruvbox]])
--- vim.cmd([[colorscheme Carbonfox]])
-
--- vim.cmd([[colorscheme Carbonfox]])
-
--- require("onedark").setup()
-
--- require("catppuccin").setup({
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = {
@@ -91,18 +82,9 @@ require("catppuccin").setup({
     },
 })
 
-require('onedark').setup {
-    style = 'warmer',
-    transparent_background = true
-}
 
-
--- -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
---vim.cmd.colorscheme "gruvbox"
- --vim.cmd.colorscheme "onedark"
-
---local VimExtConfig = [[ highlight Normal guibg=NONE ctermbg=None ]]
---vim.cmd(VimExtConfig)
+local VimExtConfig = [[ highlight Normal guibg=NONE ctermbg=None ]]
+vim.cmd(VimExtConfig)
 
 
